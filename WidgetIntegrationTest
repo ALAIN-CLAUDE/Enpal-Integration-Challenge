@@ -3,7 +3,7 @@ private class WidgetIntegrationTest {
 	@isTest static void testCreateWidget() {
         // Call the method to test
         ID thisWidgetId = WidgetIntegration.createWidget(
-            'properly Nested', 'New', false);
+            'properly Nested');
         // Verify results
         System.assert(thisWidgetId != null);
         
