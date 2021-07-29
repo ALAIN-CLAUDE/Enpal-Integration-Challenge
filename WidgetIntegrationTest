@@ -1,0 +1,16 @@
+@IsTest
+private class WidgetIntegrationTest {
+	@isTest static void testCreateWidget() {
+        // Call the method to test
+        ID thisWidgetId = WidgetIntegration.createWidget(
+            'properly Nested', 'New', false);
+        // Verify results
+        System.assert(thisWidgetId != null);
+        
+         Widget__c thisWidget = [SELECT Id,Value__c FROM Widget__c WHERE Id =: thisWidgetId ];
+        System.assert(thisWidget != null);
+        
+        System.assertEquals(thisWidget.Value__c, 'properly Nested');
+    }
+   
+}
