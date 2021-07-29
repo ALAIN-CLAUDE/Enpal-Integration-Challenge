@@ -1,0 +1,21 @@
+@RestResource(urlMapping='/Widgets/*')
+global with sharing class WidgetIntegration {
+
+    @HttpPost
+    global static ID createWidget(String Value
+       ) {
+           
+          Widget__c  thisWidget = new Widget__c(
+            	Value__c = Value          
+            );
+           if(Value == 'properly nested'){ //still validating just incase one more time
+               
+         	 insert thisWidget;///at this level a try/catch block can be included to get n set custom errors and messages if required
+               
+             }
+           
+          return thisWidget.Id; 
+          
+      
+    }   
+}
